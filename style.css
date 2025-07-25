@@ -915,9 +915,9 @@ body, html {
 }
 @media (max-width: 800px) {
   .home-section {
-    background:
+    /* background:
       url('images/bg-leaves-pattern.png') repeat,
-      url('images/banner-image-1.jpg') center top/contain no-repeat;
+      url('images/banner-image-1.jpg') center top/contain no-repeat; */
     padding-top: 60px;
     min-height: 80vh;
   }
@@ -1482,4 +1482,12 @@ body, html {
 }
 .overlay {
   z-index: 2;
+}
+@media (max-width: 800px) {
+  .desktop-menu { display: none !important; }
+  .mobile-menu { display: flex !important; }
+}
+@media (min-width: 801px) {
+  .desktop-menu { display: flex !important; }
+  .mobile-menu { display: none !important; }
 }
