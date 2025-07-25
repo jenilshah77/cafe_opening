@@ -877,6 +877,12 @@ html, body {
   top: 10px;
 }
 
+/* Remove any accidental reset for nav styles */
+.menu-images, .menu-images img {
+  all: unset;
+}
+
+/* Restore nav styles for mobile */
 @media (max-width: 768px) {
   .nav-links {
     position: fixed;
@@ -891,6 +897,7 @@ html, body {
     gap: 1.5rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
+    z-index: 2000;
   }
   .nav-toggle:checked ~ .nav-links {
     transform: translateX(0);
@@ -898,8 +905,23 @@ html, body {
   .nav-toggle-label {
     display: block;
     position: relative;
-    z-index: 1100;
+    z-index: 2100;
   }
+  .nav-toggle-label span,
+  .nav-toggle-label span:before,
+  .nav-toggle-label span:after {
+    background: #FFC43F !important;
+  }
+}
+
+/* Make sure nav-toggle is above overlay */
+.nav-toggle-label {
+  z-index: 2100;
+}
+
+/* Make sure nav-links are visible when toggled */
+.nav-links {
+  z-index: 2000;
 }
 
 .home-section {
