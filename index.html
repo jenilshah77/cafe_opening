@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sukoon Ghar Cafe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <img src="images/image.png" alt="Sukoon Ghar Logo" class="logo-img" /> Sukoon Ghar
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main class="home-section" id="home">
+    <div class="overlay">
+      <section class="intro">
+        <h1>Who We Are</h1>
+        <p>Welcome to Sukoon Ghar Cafe, your cozy corner for delicious food and relaxing vibes. We blend taste, comfort, and community in every cup and plate. Join us for a memorable experience!</p>
+      </section>
+    </div>
+  </main>
+  <section class="about-section section-leaves" id="about">
+    <div class="about-container">
+      <h2>Our Story</h2>
+      <p>
+        Sukoon Ghar Cafe was founded with a passion for creating a warm, inviting space where friends and families can gather, relax, and enjoy delicious food and drinks. Our journey began with a simple idea: to blend great taste with a sense of community and comfort. Over the years, we've grown into a beloved spot for locals and visitors alike, always striving to serve the best and make everyone feel at home.
+      </p>
+      <div class="about-images">
+        <img src="images/chocolat/IMG_6648.ARW" alt="Cafe view 1" />
+        <img src="images/chocolat/IMG_6644.ARW" alt="Cafe view 2" />
+        <img src="images/chocolat/IMG_6659.ARW" alt="Cafe view 3" />
+      </div>
+    </div>
+  </section>
+  <section class="menu-section" id="menu">
+    <div class="menu-container">
+      <h2>Our Menu</h2>
+      <p>Explore our menu and discover a world of flavors and comfort.</p>
+      <div class="menu-scroll-container">
+        <img src="images/chocolat/menu1.webp" alt="Menu page 1" class="menu-scroll-img menu-img-zoomable" />
+        <img src="images/chocolat/menu2.webp" alt="Menu page 2" class="menu-scroll-img menu-img-zoomable" />
+      </div>
+    </div>
+    <div id="menuModal" class="menu-modal">
+      <span class="menu-modal-close">&times;</span>
+      <img class="menu-modal-content" id="menuModalImg" alt="Menu large view" />
+    </div>
+  </section>
+  <section class="contact-section" id="contact">
+    <div class="contact-container">
+      <div class="contact-left">
+        <div class="contact-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2886.510019857899!2d-79.7561266!3d43.7904916!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x882b19fdc3898557%3A0xa3378e557a6d6f3b!2sSukoon%20Ghar!5e0!3m2!1sen!2sca!4v1685640000000!5m2!1sen!2sca" width="100%" height="220" style="border:0; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.08);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="contact-info">
+          <h3>Visit Us</h3>
+          <p>6131 Mayfield Rd Unit 41, Brampton, ON L7A 0C4</p>
+          <p><strong>Contact:</strong> <a href="tel:+16473259640">+16473259640</a></p>
+        </div>
+        <div class="contact-instagram">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/sukoonghar.ca/" alt="Instagram QR Code for @sukoonghar.ca" class="contact-qr" />
+          <div class="contact-follow-text">
+            <h4>Follow us on Instagram!</h4>
+            <p>Scan the QR code to join our community and stay updated with our latest offers and events.</p>
+          </div>
+        </div>
+      </div>
+      <div class="contact-right">
+        <form class="contact-form" autocomplete="off">
+          <h3>Contact Us</h3>
+          <div class="form-group">
+            <label for="fullname">Full Name</label>
+            <input type="text" id="fullname" name="fullname" placeholder="Your full name" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="you@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="message">Your Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script>
+    // Modal logic for menu images
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('menuModal');
+      const modalImg = document.getElementById('menuModalImg');
+      const closeBtn = document.querySelector('.menu-modal-close');
+      document.querySelectorAll('.menu-img-zoomable').forEach(img => {
+        img.addEventListener('click', function() {
+          modal.style.display = 'block';
+          modalImg.src = this.src;
+          modalImg.alt = this.alt;
+        });
+      });
+      closeBtn.onclick = function() {
+        modal.style.display = 'none';
+      };
+      modal.onclick = function(e) {
+        if (e.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+
+      // Side scroller dots logic
+      const scrollContainer = document.getElementById('menuScroll');
+      const dots = document.querySelectorAll('.menu-dot');
+      const imgs = scrollContainer.querySelectorAll('.menu-scroll-img');
+      function activateDot(idx) {
+        dots.forEach((dot, i) => dot.classList.toggle('active', i === idx));
+      }
+      dots.forEach((dot, idx) => {
+        dot.addEventListener('click', function() {
+          imgs[idx].scrollIntoView({behavior: 'smooth', inline: 'center'});
+          activateDot(idx);
+        });
+      });
+      scrollContainer.addEventListener('scroll', function() {
+        let scrollLeft = scrollContainer.scrollLeft;
+        let imgWidth = imgs[0].offsetWidth + 32; // gap
+        let idx = Math.round(scrollLeft / imgWidth);
+        activateDot(idx);
+      });
+    });
+  </script>
+</body>
+</html>
