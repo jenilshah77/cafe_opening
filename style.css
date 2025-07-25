@@ -775,13 +775,12 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* Reset some basic elements */
-body, html {
+html, body {
+  height: 100%;
+  min-height: 100vh;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: #f9f7f3; /* lighter, paper-like */
-  color: var(--text-dark);
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -919,7 +918,7 @@ body, html {
     width: 100vw;
     background-size: cover;
     background-position: center center;
-    /* padding-top: 60px; */
+    padding-top: 0;
   }
 }
 .overlay {
@@ -1128,11 +1127,14 @@ body, html {
 }
 @media (max-width: 500px) {
   .menu-images img {
-    object-fit: contain;
+    width: 98vw;
+    max-width: 98vw;
     height: auto;
-    max-height: 80vw;
-    margin-bottom: 1rem;
+    max-height: none;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
     background: #fff;
+    display: block;
   }
 }
 .menu-modal {
