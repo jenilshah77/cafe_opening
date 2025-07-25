@@ -946,7 +946,7 @@ html, body {
 }
 @media (max-width: 800px) {
   .home-section {
-    background-size: contain !important;
+    background-size: cover !important;
     background-repeat: no-repeat;
     background-position: center center;
     min-height: 100vh;
