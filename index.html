@@ -39,9 +39,9 @@
         Sukoon Ghar Cafe was founded with a passion for creating a warm, inviting space where friends and families can gather, relax, and enjoy delicious food and drinks. Our journey began with a simple idea: to blend great taste with a sense of community and comfort. Over the years, we've grown into a beloved spot for locals and visitors alike, always striving to serve the best and make everyone feel at home.
       </p>
       <div class="about-images">
-        <img src="images/chocolat/IMG_6648.ARW" alt="Cafe view 1" />
-        <img src="images/chocolat/IMG_6644.ARW" alt="Cafe view 2" />
-        <img src="images/chocolat/IMG_6659.ARW" alt="Cafe view 3" />
+        <img src="images/chocolat/IMG_6648.ARW" alt="Cafe view 1" loading="eager" decoding="async" class="fade-img" />
+        <img src="images/chocolat/IMG_6644.ARW" alt="Cafe view 2" loading="eager" decoding="async" class="fade-img" />
+        <img src="images/chocolat/IMG_6659.ARW" alt="Cafe view 3" loading="eager" decoding="async" class="fade-img" />
       </div>
     </div>
   </section>
@@ -50,12 +50,12 @@
       <h2>Our Menu</h2>
       <p>Explore our menu and discover a world of flavors and comfort.</p>
       <div class="menu-scroll-container desktop-menu">
-        <img src="images/chocolat/menu1.webp" alt="Menu page 1" class="menu-scroll-img menu-img-zoomable" />
-        <img src="images/chocolat/menu2.webp" alt="Menu page 2" class="menu-scroll-img menu-img-zoomable" />
+        <img src="images/chocolat/menu1.webp" alt="Menu page 1" class="menu-scroll-img menu-img-zoomable fade-img" loading="eager" decoding="async" />
+        <img src="images/chocolat/menu2.webp" alt="Menu page 2" class="menu-scroll-img menu-img-zoomable fade-img" loading="eager" decoding="async" />
       </div>
       <div class="menu-images mobile-menu">
-        <img src="images/chocolat/menu1.webp" alt="Menu page 1" class="menu-img-zoomable" />
-        <img src="images/chocolat/menu2.webp" alt="Menu page 2" class="menu-img-zoomable" />
+        <img src="images/chocolat/menu1.webp" alt="Menu page 1" class="menu-img-zoomable fade-img" loading="eager" decoding="async" />
+        <img src="images/chocolat/menu2.webp" alt="Menu page 2" class="menu-img-zoomable fade-img" loading="eager" decoding="async" />
       </div>
     </div>
     <div id="menuModal" class="menu-modal">
@@ -75,7 +75,7 @@
           <p><strong>Contact:</strong> <a href="tel:+16473259640">+16473259640</a></p>
         </div>
         <div class="contact-instagram">
-          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/sukoonghar.ca/" alt="Instagram QR Code for @sukoonghar.ca" class="contact-qr" />
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://www.instagram.com/sukoonghar.ca/" alt="Instagram QR Code for @sukoonghar.ca" class="contact-qr fade-img" loading="eager" decoding="async" />
           <div class="contact-follow-text">
             <h4>Follow us on Instagram!</h4>
             <p>Scan the QR code to join our community and stay updated with our latest offers and events.</p>
@@ -155,6 +155,35 @@
           }
         });
       });
+    });
+  </script>
+  <style>
+    .fade-img {
+      opacity: 0;
+      transition: opacity 0.7s cubic-bezier(.4,0,.2,1);
+    }
+    .fade-img.loaded {
+      opacity: 1;
+    }
+  </style>
+  <script>
+    // Fade-in effect for images
+    document.addEventListener('DOMContentLoaded', function() {
+      document.querySelectorAll('img.fade-img').forEach(function(img) {
+        if (img.complete) {
+          img.classList.add('loaded');
+        } else {
+          img.addEventListener('load', function() {
+            img.classList.add('loaded');
+          });
+        }
+      });
+    });
+    // Always open at top (home) on load
+    document.addEventListener('DOMContentLoaded', function() {
+      if (!window.location.hash) {
+        window.scrollTo(0, 0);
+      }
     });
   </script>
 </body>
