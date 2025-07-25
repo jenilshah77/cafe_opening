@@ -782,6 +782,18 @@ html, body {
   padding: 0;
   overflow-x: hidden;
 }
+body, html {
+  background: #fdf6ee;
+}
+.contact-left, .contact-right {
+  background: #fdf6ee;
+}
+.menu-images img {
+  background: #fdf6ee;
+}
+.menu-scroll-img {
+  background: #fdf6ee;
+}
 
 .navbar {
   width: 100%;
@@ -1364,8 +1376,7 @@ html, body {
   border-radius: 0;
 }
 .contact-section {
-  background: #f8fafc;
-  padding: 60px 0 40px 0;
+  background: #fdf6ee;
 }
 .contact-container {
   max-width: 1100px;
@@ -1578,4 +1589,19 @@ html, body {
 @media (min-width: 801px) {
   .desktop-menu { display: flex !important; }
   .mobile-menu { display: none !important; }
+}
+.contact-right, .contact-form {
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+.form-group input,
+.form-group textarea {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 600px) {
+  .contact-form {
+    padding: 0;
+  }
 }
