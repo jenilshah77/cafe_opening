@@ -912,6 +912,16 @@ html, body {
   .nav-toggle-label span:after {
     background: #FFC43F !important;
   }
+  .nav-links li a {
+    color: #FFC43F !important;
+    background: transparent !important;
+    font-size: 1.2rem;
+    font-weight: 600;
+  }
+  .nav-links li a.active {
+    background: #FFC43F !important;
+    color: #222 !important;
+  }
 }
 
 /* Make sure nav-toggle is above overlay */
@@ -936,10 +946,11 @@ html, body {
 }
 @media (max-width: 800px) {
   .home-section {
+    background-size: contain !important;
+    background-repeat: no-repeat;
+    background-position: center center;
     min-height: 100vh;
     width: 100vw;
-    background-size: cover;
-    background-position: center center;
     padding-top: 0;
   }
 }
