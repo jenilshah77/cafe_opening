@@ -1421,6 +1421,51 @@ body, html {
   color: #6995B1;
   text-decoration: none;
 }
+/* Hours of Operation Styles */
+.contact-hours {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e3e3d7;
+}
+.contact-hours h3 {
+  margin: 0 0 0.7rem 0;
+  font-size: 1.2rem;
+  color: #6995B1;
+  font-family: 'Nunito', Arial, sans-serif;
+}
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0;
+  gap: 1rem;
+}
+.hours-day {
+  font-weight: 600;
+  color: #333;
+  font-size: 1rem;
+  min-width: 80px;
+}
+.hours-time {
+  color: #555;
+  font-size: 1rem;
+  text-align: right;
+}
+@media (max-width: 600px) {
+  .contact-hours {
+    margin-top: 0.8rem;
+    padding-top: 0.8rem;
+  }
+  .hours-row {
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 0.5rem;
+  }
+  .hours-day, .hours-time {
+    font-size: 0.95rem;
+  }
+}
+
 .contact-instagram {
   display: flex;
   align-items: center;
